@@ -1,0 +1,7 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${ISSUER_URI:http://localhost:9000/realms/library}  # URL Keycloak Realm
+          jwk-set-uri: ${JWK_URI:http://localhost:9000/realms/library/protocol/openid-connect/certs} # JWK Key Set

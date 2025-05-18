@@ -1,0 +1,6 @@
+moderate: ${MODERATOR_MODE:feign}
+#moderate: "rest-template"
+#moderate: "feign"
+#moderate: "kafka"
+
+moderator-url: ${MODERATOR_SERVICE_URL:http://localhost:8081/moderator}

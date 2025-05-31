@@ -1,7 +1,3 @@
-moderate:
-  from:
-    kafka:
-      enabled: true
 consumer:
   group: ${GRPOUP:book-service}
 

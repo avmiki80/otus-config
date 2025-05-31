@@ -1,9 +1,9 @@
 management:
-  health:
-    circuitbreakers:
-      enabled: true
-    ratelimiters:
-      enabled: true
+#  health:
+#    circuitbreakers:
+#      enabled: true
+#    ratelimiters:
+#      enabled: true
   endpoints:
     web:
       exposure:

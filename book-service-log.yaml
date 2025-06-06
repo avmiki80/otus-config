@@ -10,6 +10,7 @@ logging:
     org.springframework.cloud.stream: ${LOGGING_KAFKA_LEVEL:INFO}
     org.apache.kafka.clients.consumer.internals.ConsumerCoordinator: ${LOGGING_KAFKA_CC_LEVEL:WARN}
     org.springframework.kafka: DEBUG
+    org.springframework.integration.http: ERROR
     org.apache.kafka.clients.consumer.ConsumerConfig: DEBUG
 
     io.github.resilience4j.retry: TRACE

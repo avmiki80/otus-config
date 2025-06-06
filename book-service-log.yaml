@@ -14,6 +14,6 @@ logging:
 
     io.github.resilience4j.retry: TRACE
     feign: DEBUG
-    org.springframework.retry: DEBUG
+    org.springframework.retry: ERROR
 
 

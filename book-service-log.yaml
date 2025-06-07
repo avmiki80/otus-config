@@ -12,8 +12,8 @@ logging:
     org.springframework.kafka: ${LOGGING_KAFKA_LEVEL:INFO}
     org.apache.kafka.clients.consumer.ConsumerConfig: DEBUG
 
-    io.github.resilience4j.retry: TRACE
-    feign: DEBUG
-    org.springframework.retry: ERROR
+    io.github.resilience4j.retry: ${LOGGING_FEIGN_LEVEL:TRACE}
+    feign: ${${LOGGING_FEIGN_LEVEL:TRACE}:DEBUG}
+    org.springframework.retry: ${LOGGING_FEIGN_LEVEL:ERROR}
 
 

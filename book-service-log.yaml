@@ -13,7 +13,7 @@ logging:
     org.apache.kafka.clients.consumer.ConsumerConfig: DEBUG
 
     io.github.resilience4j.retry: ${LOGGING_FEIGN_LEVEL:TRACE}
-    feign: ${${LOGGING_FEIGN_LEVEL:TRACE}:DEBUG}
+    feign: ${LOGGING_FEIGN_LEVEL:DEBUG}
     org.springframework.retry: ${LOGGING_FEIGN_LEVEL:ERROR}
 
 

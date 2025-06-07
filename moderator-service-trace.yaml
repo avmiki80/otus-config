@@ -1,5 +1,6 @@
 spring:
   sleuth:
+    enabled: ${TRACE_ENABLED:true}
     sampler:
       probability: 1.0  # Процент запросов для трассировки (1.0 = 100%)
   zipkin:

@@ -40,13 +40,12 @@ resilience4j:
     instances:
       moderatorService:
         base-config: default
-        maxConcurrentCalls: 20
     metrics:
       enabled: true
     configs:
       default:
-        maxConcurrentCalls: 20
-        maxWaitDuration: 5ms
+        maxConcurrentCalls: 40
+        maxWaitDuration: 500ms
 
   ratelimiter:
     metrics:
@@ -56,6 +55,6 @@ resilience4j:
         base-config: default
     configs:
       default:
-        limitForPeriod: 20
+        limitForPeriod: 40
         limitRefreshPeriod: 1s
         timeoutDuration: 100ms

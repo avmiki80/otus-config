@@ -44,8 +44,8 @@ resilience4j:
       enabled: true
     configs:
       default:
-        maxConcurrentCalls: 50
-        maxWaitDuration: 1000ms
+        maxConcurrentCalls: 30
+        maxWaitDuration: 500ms
 
   ratelimiter:
     metrics:
@@ -55,6 +55,6 @@ resilience4j:
         base-config: default
     configs:
       default:
-        limitForPeriod: 50
+        limitForPeriod: 30
         limitRefreshPeriod: 1s
         timeoutDuration: 100ms

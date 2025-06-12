@@ -3,4 +3,4 @@ moderate: ${MODERATOR_MODE:feign}
 #moderate: "feign"
 #moderate: "kafka"
 
-moderator-url: ${MODERATOR_SERVICE_URL:http://localhost:8091/moderator}
+moderator-url: ${MODERATOR_SERVICE_URL:http://localhost:8091}

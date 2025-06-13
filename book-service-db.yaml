@@ -2,7 +2,7 @@ spring:
   datasource:
 #    url: jdbc:h2:mem:testdb
     driverClassName: org.postgresql.Driver
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/library}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/library?currentSchema=library}
     username: ${DB_LOGIN:postgres}
     password: ${DB_PASSWORD:postgres}
     hikari:
@@ -20,6 +20,7 @@ spring:
     show-sql: false
     properties:
       hibernate:
+        default_schema: ${CURRENT_SCHEMA:library}
         jdbc:
           batch_size: ${BATCH_SIZE:200}
         order_updates: true
@@ -27,6 +28,7 @@ spring:
 
   liquibase:
     enabled: true
+    default-schema: ${CURRENT_SCHEMA:library}
     change-log: classpath*:db/changelog/rootChangeLog.xml
   sql:
     init:

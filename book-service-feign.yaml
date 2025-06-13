@@ -23,8 +23,8 @@ resilience4j:
       default:
         slidingWindowType: COUNT_BASED
         registerHealthIndicator: true  # Включено - правильно для мониторинга
-        slidingWindowSize: 10          # Маленькое окно (10 вызовов) - хорошо для тестов
-        minimumNumberOfCalls: 5        # Минимум 5 вызовов перед решением
+        slidingWindowSize: 50          # Маленькое окно (10 вызовов) - хорошо для тестов
+        minimumNumberOfCalls: 20        # Минимум 5 вызовов перед решением
         permittedNumberOfCallsInHalfOpenState: 5  # Стандартное значение
         automaticTransitionFromOpenToHalfOpenEnabled: true  # Автопереход - OK
         waitDurationInOpenState: 60s    # Короткий интервал (для тестов)

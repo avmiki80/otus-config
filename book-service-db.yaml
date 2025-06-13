@@ -2,7 +2,7 @@ spring:
   datasource:
 #    url: jdbc:h2:mem:testdb
     driverClassName: org.postgresql.Driver
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/library?currentSchema=library&createSchemaIfNotExist=true}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/library?currentSchema=library}
     username: ${DB_LOGIN:postgres}
     password: ${DB_PASSWORD:postgres}
     hikari:

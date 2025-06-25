@@ -33,5 +33,5 @@ spring:
             enable.idempotence: ${KAFKA_PRODUCER_ENABLE_IDEMPOTENCE:true}
 
 consumer:
-  group: ${GRPOUP:moderate-service}
+  group: ${GRPOUP:mailsender}
 

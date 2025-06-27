@@ -1,0 +1,6 @@
+mailsend: ${MAIL_SEND_MODE:rest-template}
+#moderate: "rest-template"
+#moderate: "feign"
+#moderate: "kafka"
+
+mailsender-url: ${MAIL_SENDER_URL:http://localhost:8201}

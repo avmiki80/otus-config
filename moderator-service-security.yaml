@@ -1,3 +1,4 @@
 jwk:
   uri: ${JWK_URI:http://localhost:9000/realms/library/protocol/openid-connect/certs}
 clientId: ${CLIENT_ID:library}
+tokenUrl: ${TOKEN_URL:http://localhost:9000/realms/library/protocol/openid-connect/token}

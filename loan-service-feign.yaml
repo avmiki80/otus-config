@@ -1,0 +1,60 @@
+feign:
+  circuitbreaker:
+    enabled: true
+  metrics:
+    enabled: true
+
+resilience4j:
+  retry:
+    metrics:
+      enabled: true
+    configs:
+      default:
+        maxAttempts: 3                 # Общее количество попыток (первая + ретраи)
+        waitDuration: 500ms            # Фиксированная задержка между попытками
+        enableExponentialBackoff: false # Отключить экспоненциальный рост задержки
+        exponentialBackoffMultiplier: 2 # Множитель (если enableExponentialBackoff=true)
+    instances:
+      loanService:
+        base-config: default
+
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowType: COUNT_BASED
+        registerHealthIndicator: true  # Включено - правильно для мониторинга
+        slidingWindowSize: 50          # Маленькое окно (10 вызовов) - хорошо для тестов
+        minimumNumberOfCalls: 20        # Минимум 5 вызовов перед решением
+        permittedNumberOfCallsInHalfOpenState: 5  # Стандартное значение
+        automaticTransitionFromOpenToHalfOpenEnabled: true  # Автопереход - OK
+        waitDurationInOpenState: 60s    # Короткий интервал (для тестов)
+        failureRateThreshold: 50       # 50% ошибок для срабатывания
+        eventConsumerBufferSize: 50    # Размер буфера событий
+    metrics:
+      enabled: true
+    instances:
+      loanService:
+        base-config: default
+
+  bulkhead:
+    instances:
+      loanService:
+        base-config: default
+    metrics:
+      enabled: true
+    configs:
+      default:
+        maxConcurrentCalls: 20
+        maxWaitDuration: 100ms
+
+  ratelimiter:
+    metrics:
+      enabled: true
+    instances:
+      loanService:
+        base-config: default
+    configs:
+      default:
+        limitForPeriod: 20
+        limitRefreshPeriod: 1s
+        timeoutDuration: 100ms

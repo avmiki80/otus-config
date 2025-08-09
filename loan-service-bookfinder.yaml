@@ -1,4 +1,4 @@
-bookfind: ${BOOK_FIND_MODE:rest-template}
+bookservice: ${BOOK_FIND_MODE:rest-template}
 #bookfind: "rest-template"
 #bookfind: "feign"
 

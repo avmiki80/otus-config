@@ -2,4 +2,4 @@ bookservice: ${BOOK_FIND_MODE:rest-template}
 #bookfind: "rest-template"
 #bookfind: "feign"
 
-book-service-url: ${BOOK_SERVICE_URL:http://localhost:8101}
+bookservice-url: ${BOOK_SERVICE_URL:http://localhost:8101}

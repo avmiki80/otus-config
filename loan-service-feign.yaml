@@ -15,7 +15,7 @@ resilience4j:
         enableExponentialBackoff: false # Отключить экспоненциальный рост задержки
         exponentialBackoffMultiplier: 2 # Множитель (если enableExponentialBackoff=true)
     instances:
-      loanService:
+      bookService:
         base-config: default
 
   circuitbreaker:
@@ -33,12 +33,12 @@ resilience4j:
     metrics:
       enabled: true
     instances:
-      loanService:
+      bookService:
         base-config: default
 
   bulkhead:
     instances:
-      loanService:
+      bookService:
         base-config: default
     metrics:
       enabled: true
@@ -51,7 +51,7 @@ resilience4j:
     metrics:
       enabled: true
     instances:
-      loanService:
+      bookService:
         base-config: default
     configs:
       default:

@@ -6,7 +6,7 @@ feign:
         readTimeout: 10000     # Таймаут чтения данных (мс)
       bookService: # Или для конкретного клиента
         connectTimeout: 3000
-        readTimeout: 15000
+        readTimeout: 60000
   circuitbreaker:
     enabled: true
   metrics:

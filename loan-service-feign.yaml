@@ -6,13 +6,21 @@ feign:
         readTimeout: 10000     # Таймаут чтения данных (мс)
       bookService: # Или для конкретного клиента
         connectTimeout: 3000
-        readTimeout: 5000
+        readTimeout: 15000
   circuitbreaker:
     enabled: true
   metrics:
     enabled: true
 
 resilience4j:
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 15s # Общий таймаут
+        cancelRunningFuture: true # Прерывать выполняющиеся запросы
+    instances:
+      bookServiceClient:
+        baseConfig: default
   retry:
     metrics:
       enabled: true

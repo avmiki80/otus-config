@@ -16,7 +16,7 @@ resilience4j:
   timelimiter:
     configs:
       default:
-        timeoutDuration: 60s # Общий таймаут
+        timeoutDuration: 10s # Общий таймаут
         cancelRunningFuture: true # Прерывать выполняющиеся запросы
     instances:
       bookServiceClient:

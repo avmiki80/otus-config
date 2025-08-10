@@ -1,4 +1,12 @@
 feign:
+  client:
+    config:
+      default: # Настройки для всех Feign-клиентов
+        connectTimeout: 5000   # Таймаут подключения (мс)
+        readTimeout: 10000     # Таймаут чтения данных (мс)
+      bookService: # Или для конкретного клиента
+        connectTimeout: 3000
+        readTimeout: 5000
   circuitbreaker:
     enabled: true
   metrics:

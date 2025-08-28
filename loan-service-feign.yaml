@@ -16,7 +16,7 @@ resilience4j:
   timelimiter:
     configs:
       default:
-        timeoutDuration: 10s # Общий таймаут
+        timeoutDuration: 90s # Общий таймаут
         cancelRunningFuture: true # Прерывать выполняющиеся запросы
     instances:
       bookServiceClient:
@@ -40,11 +40,11 @@ resilience4j:
         slidingWindowType: COUNT_BASED
         registerHealthIndicator: true  # Включено - правильно для мониторинга
         slidingWindowSize: 50          # Маленькое окно (10 вызовов) - хорошо для тестов
-        minimumNumberOfCalls: 20        # Минимум 5 вызовов перед решением
+        minimumNumberOfCalls: 5        # Минимум 5 вызовов перед решением
         permittedNumberOfCallsInHalfOpenState: 5  # Стандартное значение
         automaticTransitionFromOpenToHalfOpenEnabled: true  # Автопереход - OK
         waitDurationInOpenState: 60s    # Короткий интервал (для тестов)
-        failureRateThreshold: 50       # 50% ошибок для срабатывания
+        failureRateThreshold: 90       # 90% ошибок для срабатывания
         eventConsumerBufferSize: 50    # Размер буфера событий
     metrics:
       enabled: true
